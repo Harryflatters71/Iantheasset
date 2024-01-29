@@ -11,7 +11,37 @@
 
 <body>
     <section class="main_container">
+        
+function getOrientation() {
+        let _orn = screen.msOrientation ||
+        (screen.orientation ||
+        screen.mozOrientation).type;
 
+        switch(_orn){
+            case 'portrait-primary':
+            case 'portrait-secondary':
+
+        break;
+        case 'landscape-primary':
+        console.log()
+        break;
+        case 'landscape-secondary':
+        break;
+        case undefined:
+        //not supported
+        break;
+        default:
+        //something unknown
+    }
+    return _orn;
+}
+
+window.addEventListener('orientationchange',(ev)=>{
+    orn = getOrientation();
+    out.textcontent = orn;
+    console.dir(ev)
+})
+        
     
     <body background="Stage_lights.jpeg">
     <h1>'THE ASSET'</h1>
